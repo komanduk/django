@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>New</h1>
+  <form action = "{%url 'todo:create'%}" method = 'POST'>
+    {% csrf_token %}
+    <div>
+      <label for='title'>Title: </label>
+      <input type='text' name ='title' id = 'title'>
+    </div>
+    <div>
+      <label for='content'> content: </label>
+      <textarea name='content' id='content'></textarea>
+    </div>
+    <div>
+      <label for='number'> 우선순위: </label>
+      <input type='number' name='number' id='number' min='1' max='5' value='1'>
+    </div>
+    <div>
+      <label for='deadline'>마감기한 </label>
+      <lnput type='date' name='dead'>
+    </div>
+    <input type = 'submit'>
+  </form>
+  <hr>
+  <a href="{% url 'todo:index' %}">[back]
+</body>
+</html>
