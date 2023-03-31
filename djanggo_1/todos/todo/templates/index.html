@@ -10,7 +10,8 @@
    <H1><a href="{%url 'todo:new'%}">할 일 생성</a></H1>
   <hr>
   {% for todos in todo%}
-    <a href="{% url 'todo:detail' todos.pk %}">{{ todos.title }}</a><span> 상태: <a href="#">완료하기</a></span>
+    <a href="{% url 'todo:detail' todos.pk %}">{{ todos.title }}</a>
+    <span> 상태: <a href="#">완료하기</a></span>
   <hr>
   {% endfor %}
 </body>
